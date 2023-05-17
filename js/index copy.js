@@ -1,13 +1,11 @@
 window.addEventListener("load",()=>{
   // main
-  const portfolio = document.querySelector(".portfolio");
-  const main = document.querySelector(".main_page");
-  const mouseScroll = document.querySelector(".scroll");
-  const header = document.querySelector(".header");
-  const maintext = document.querySelector(".maintext");
-  const h1 = document.querySelectorAll(".main_page h1 span");
-
-  // start
+  const portfolio = document.querySelector(".portfolio")
+  const main = document.querySelector(".main_page")
+  const mouseScroll = document.querySelector(".scroll")
+  const header = document.querySelector(".header")
+  const maintext = document.querySelector(".maintext")
+  const h1 = document.querySelectorAll(".main_page h1 span")
   portfolio.classList.add("intro")
   maintext.classList.add("on")
   h1[1].classList.add("on")
@@ -23,27 +21,21 @@ window.addEventListener("load",()=>{
     portfolio.classList.remove("intro")
   },8500)
 
-
-  // manu
-  const menubtn = document.querySelector(".portfolio_menu");
   const menuLi = document.querySelectorAll(".menu>ul>li");
+  const menubtn = document.querySelector(".portfolio_menu");
   const menu = document.querySelector(".menu");
   const close = document.querySelector(".menu .close");
-
-  const div = document.querySelectorAll(".portfolio_container>div");
-  const project = document.querySelectorAll(".projects>div");
-  const footer = document.querySelector(".footer");
-
   let height = window.innerHeight;
+  const div = document.querySelectorAll(".portfolio_container>div")
+  const project = document.querySelectorAll(".projects>div")
+  const footer = document.querySelector(".footer")
 
-  // div
   for(let el of div){
     el.addEventListener("mouseover",e=>{
       el.classList.add("on")
     })
   }
 
-  // menu open/close
   menubtn.addEventListener("click",e=>{
     e.preventDefault();
     menu.classList.add("on")
@@ -53,7 +45,6 @@ window.addEventListener("load",()=>{
     menu.classList.remove("on")
   })
 
-
   for(let i=0; i<menuLi.length; i++){
     menuLi[i].addEventListener("click",e=>{
       e.preventDefault()
@@ -61,9 +52,10 @@ window.addEventListener("load",()=>{
         el.classList.remove("on")
       }
       menuLi[i].classList.add("on")
+
       if(i == 4){
         window.scroll({
-          top:height * `${i*1.12}`,
+          top:height * `${i*1.1}`,
           left:0,
           behavior:"smooth"
         })
@@ -100,20 +92,13 @@ window.addEventListener("load",()=>{
     let height = window.innerHeight - 200;
 
     if(scroll < height){
-      header.classList.add("mainpage");
-      main.classList.add("on");
-      mouseScroll.classList.add("on");
-      footer.classList.remove("on");
-      for(let a=0; a<div.length; a++){
+      header.classList.add("mainpage")
+      main.classList.add("on")
+      mouseScroll.classList.add("on")
+      for(let a=0; div.length; a++){
         div[a].classList.remove("on")
       }
-      for(let el of menuLi){
-        el.classList.remove("on")
-      }
-      for(let el of project){
-        el.classList.remove("on")
-      }
-      menuLi[0].classList.add("on")
+      footer.classList.remove("on")
     }
     else{
       header.classList.remove("mainpage")
@@ -127,6 +112,7 @@ window.addEventListener("load",()=>{
         el.classList.remove("on")
       }
       menuLi[1].classList.add("on")
+      footer.classList.remove("on")
     }
     if(scroll >= height * 2 && scroll < height * 3.5){
       div[1].classList.add("on");
@@ -134,6 +120,7 @@ window.addEventListener("load",()=>{
         el.classList.remove("on")
       }
       menuLi[2].classList.add("on")
+      footer.classList.remove("on")
     }
     if(scroll >= height * 3 && scroll < height * 4){
       div[2].classList.add("on");
@@ -142,6 +129,7 @@ window.addEventListener("load",()=>{
         el.classList.remove("on")
       }
       menuLi[3].classList.add("on")
+      footer.classList.remove("on")
     }
     if(scroll >= height * 4.2 && scroll < height * 5){
       div[3].classList.add("on");
@@ -149,6 +137,7 @@ window.addEventListener("load",()=>{
         el.classList.remove("on")
       }
       menuLi[3].classList.add("on")
+      footer.classList.remove("on")
     }
     if(scroll >= height * 5.5 && scroll < height * 12){
       div[4].classList.add("on");
@@ -156,9 +145,10 @@ window.addEventListener("load",()=>{
         el.classList.remove("on")
       }
       menuLi[4].classList.add("on")
+      footer.classList.remove("on")
     }
 
-    if(scroll > height * 15){
+    if(scroll > height * 10){
       footer.classList.add("on");
       for(let el of menuLi){
         el.classList.remove("on")
@@ -167,7 +157,10 @@ window.addEventListener("load",()=>{
     }
 
     for(let i=0; i<project.length; i++){
-      if(scroll >= height * `${6+i}`+ 800){
+      if(scroll >= height * `${6+i}`+ 500 && scroll <= height * `${7+i}`+600){
+        for(let el of project){
+          el.classList.remove("on")
+        }
         project[i].classList.add("on")
       }
     }
@@ -223,8 +216,6 @@ window.addEventListener("load",()=>{
       })
     }
   })
-
-  //sub info
   const more = document.querySelectorAll(".more");
   const sub = document.querySelectorAll(".sub");
   const subX = document.querySelectorAll(".sub .close");
@@ -299,12 +290,10 @@ window.addEventListener("load",()=>{
     hrefList[1].addEventListener("click",e=>{
       e.preventDefault();
       subDiv[i].classList.add("on")
-      subX[i].style.opacity="0"
     })
     subSpan[i].addEventListener("click",e=>{
       e.preventDefault();
       subDiv[i].classList.remove("on")
-      subX[i].style.opacity="1"
     })
   }
 
