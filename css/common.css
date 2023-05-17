@@ -1,0 +1,7 @@
+/* common.css */
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;500;600;700;900&display=swap');
+
+/*common*/
+body{color: #3a3a3a; font-family: 'Noto Serif KR', serif; font-weight: 900; background: #f1f1ef;}
+a,a:hover{color: #3a3a3a; text-decoration: none;}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>과제</title>
+  <style>
+    body,div{padding: 0; margin: 0;}
+
+    div.cat{position: relative; width: 500px; height: 500px;
+      border: 1px solid; margin: 20px ;
+      background: rgb(95, 95, 158);
+     overflow: hidden;}
+
+      
+    .cat .ear{position: absolute; left: 50%; top: 110px;
+      margin-left: -5px;
+      width: 10px; height: 10px; border-radius: 50%;}
+
+      .cat .ear::after,.cat .ear::before{content: "";
+        display:block;
+        position: absolute; left: 50%;
+        margin-left: -80px;
+        width: 160px; height: 160px; background:pink;
+        border: 20px solid gray; box-sizing: border-box;
+        border-radius: 30px;
+        outline: 8px solid; outline-offset: -8px;}
+
+      .cat .ear::after{transform:translate3d(-50px,0,0) 
+        rotate(10deg) skew(15deg,10deg);}
+      .cat .ear::before{transform: translate3d(50px,0,0)
+        rotate(-10deg) skew(-15deg,-10deg);}
+      
+      
+  .cat .face{position: absolute; left: 50%; top: 130px;
+    margin-left: -125px; 
+    width: 250px; height: 220px; border-radius: 110% 110% 90% 90%;
+    background: gray; border: 8px solid;
+    box-sizing: border-box; overflow: hidden;}
+
+  .cat .face .dot{position: absolute; left: 50px; top:-30px;
+    margin-left: -85px;
+    width: 170px; height: 200px; background: #333;
+    border-radius: 50%;}
+      
+  
+  .cat .eye{position: absolute;left: 50%; top:245px;
+    width: 10px; height: 10px; margin-left: -5px;
+    transform: rotate(-10deg); transform-origin: 50% 100%;}
+
+    .cat .eye::before{content: ""; display: block;
+       position: absolute; left: -102px; top: -50px;
+       width: 90px; height: 80px;
+       background: #fff; border-radius: 50% 120% 10% 120%;
+       border: 1px solid; box-sizing: border-box;
+       animation: eye-move 5s linear infinite;}
+
+       @keyframes eye-move{
+        0%,100%{background: #fff; border: 1px solid #000;
+                transform: rotate(0);}
+        19.9%{background: #fff; border:1px solid #000;
+              transform: rotate(0);}
+        20%{background:none; border:1px solid transparent;
+            transform: rotate(0);}
+        30%,65%{background:none;
+            border: 5px solid #000;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-22deg); transform-origin: 100% 100%;}
+        75%{background:none;
+            border: 5px solid #000;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-0deg); transform-origin: 100% 100%;}
+        75.1%{background: #fff; border: 1px solid #000;
+             transform: rotate(0deg);}
+            
+            }
+
+
+    .cat .eye::after{content: ""; display: block;
+       position: absolute; left: -85px; top: -40px;
+       width: 68px; height: 68px;
+       border-radius: 50%; background: #fff;
+       border: 19px solid #000; box-sizing: border-box;
+       animation: eyes-move 5s linear infinite;}
+       
+       @keyframes eyes-move{
+        0%,100%{background: #fff; border: 19px solid #000; 
+                transform: rotate(0);}
+        19.9%{background: #fff; border: 19px solid #000;
+              transform: rotate(0);}
+        20%{background:none; border: none; transform: rotate(0);}
+        30%,65%{background:none; border: none;
+                transform: rotate(-30deg); 
+                transform-origin: 100% 100%;}
+        75%{background:none; border: none;
+            transform: rotate(0deg); transform-origin: 100% 100%;}
+        75.1%{background: #fff; border: 19px solid #000;
+              transform: rotate(0);}
+          }
+
+  .cat .eye2{position: absolute;left: 50%; top:245px;
+    width: 10px; height: 10px; margin-left: -5px;
+    transform: rotate(10deg); transform-origin: 50% 100%;}
+
+    .cat .eye2::before{content: "";
+       position: absolute; left: 20px; top: -50px;
+       width: 90px; height: 80px;
+       background: #fff; border-radius: 120% 50% 120% 10%;
+       border: 1px solid; box-sizing: border-box;
+       animation: eye-move2 5s linear infinite;}
+
+       @keyframes eye-move2{
+        0%,100%{background: #fff; border: 1px solid #000;
+                transform: rotate(0);}
+        19.9%{background: #fff; border:1px solid #000;
+              transform: rotate(0);}
+        20%{background:none; border:1px solid transparent;
+            transform: rotate(0);}
+        30%,65%{background:none;
+            border: 5px solid #000;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            transform: rotate(22deg); transform-origin: 0% 100%;}
+        75%{background:none;
+            border: 5px solid #000;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            transform: rotate(-0deg); transform-origin: 0% 100%;}
+        75.1%{background: #fff; border: 1px solid #000;
+             transform: rotate(0deg);}
+          }
+    .cat .eye2::after{content: "";
+       position: absolute; left: 25px; top: -40px;
+       width: 68px; height: 68px;
+       border-radius: 50%; background: #fff;
+       border: 19px solid #000; box-sizing: border-box;
+       animation: eyes-move 5s linear infinite;}
+       
+       @keyframes eyes-move{
+        0%,100%{background: #fff; border: 19px solid #000; 
+                transform: rotate(0);}
+        19.9%{background: #fff; border: 19px solid #000;
+              transform: rotate(0);}
+        20%{background:none; border: none; transform: rotate(0);}
+        30%,65%{background:none; border: none;
+                transform: rotate(-30deg); 
+                transform-origin: 100% 100%;}
+        75%{background:none; border: none;
+            transform: rotate(0deg); transform-origin: 100% 100%;}
+        75.1%{background: #fff; border: 19px solid #000;
+              transform: rotate(0);}
+          }
+
+
+  .cat .nose{position: absolute; left: 50%; top:calc(50% + 30px);
+    margin-left: -12.5px;
+    width: 25px; height: 15px; background: #000;
+    border-radius: 30px 30px 50px 50px;}
+
+    .cat .nose::after{content: ""; display: block;
+      position: absolute; left: 50%; top: 0px;
+      margin-left: -5px;
+      width: 10px; height: 35px; background: #000;
+      border-radius: 10px;
+      transform: rotate(35deg); transform-origin: 50% 30%;
+      animation: nose 5s linear linear;}
+
+      @keyframes nose{
+        0%,45%,80%{transform: rotate(35deg); 
+                  transform-origin: 50% 30%;}
+        50%{transform: rotate(60deg); transform-origin: 50% 30%;}
+        70%{transform: rotate(40deg); transform-origin: 50% 30%;}
+  }
+
+
+    .cat .nose::before{content: ""; display: block;
+      position: absolute; left: 50%; top: 0px;
+      margin-left: -5px;
+      width: 10px; height: 35px; background: #000;
+      border-radius: 10px;
+      transform: rotate(-35deg); transform-origin: 50% 30%;}
+
+
+  .cat .goatee{position: absolute; left: 50%; top: 56%;
+    margin-left: -160px; width: 85px; height: 10px;
+    border: 5px solid; border-radius: 50%;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;}
+
+    .cat .goatee::after{content: ""; display: block;
+      position: absolute; left: 50px; top: 13px;
+      margin-left: -53px; width: 85px; height: 10px;
+      border: 5px solid; border-radius: 50%;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(-7deg);}
+
+    .cat .goatee::before{content: ""; display: block;
+      opacity: 0;
+      position: absolute; left: 30px; top: -10px;
+      margin-left: 0px; width: 70px; height: 30px;
+      background: rgba(203, 130, 142,0.6);
+      border-radius: 50%;
+      box-shadow: 200px -5px 0 0 rgba(203, 130, 142,0.6);
+      animation: cheek 5s linear infinite;}
+
+      @keyframes cheek{
+        0%,30%,80%{opacity: 0;}
+        50%{opacity: 1;}
+        70%{opacity: 1;}
+      }
+  .cat .goatee2{position: absolute; left: 50%; top: 56%;
+    margin-left: 65px; width: 85px; height: 10px;
+    border: 5px solid; border-radius: 50%;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;}
+
+    .cat .goatee2::after{content: ""; display: block;
+      position: absolute; left: 50px; top: 13px;
+      margin-left: -53px; width: 85px; height: 10px;
+      border: 5px solid; border-radius: 50%;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(7deg);}
+
+
+  .cat .ccc{position: absolute; left: 50%;top: 120%;
+    margin-left: -15px; width:30px; height: 100px;
+    background: red linear-gradient(to bottom, rgb(220, 96, 96) 0,red 20%,red 80%,
+    rgb(220, 96, 96) 100%);
+    animation: cu 5s linear infinite;}
+
+    @keyframes cu{
+      20%{top: 120%;}
+      30%{top: 70%;}
+      70%{top: 70%;}
+
+    }
+    .cat .ccc::after{content: "";
+      position: absolute; left: 50%;
+      margin-left: -25px; margin-top: -10px; width:30px; height: 100px;
+      border: 10px solid red;
+      border-right-color: transparent;
+      border-left-color: transparent;}
+
+  </style>
+</head>
+<body>
+  <div class="cat">
+    <div class="ear"></div>
+    <div class="face">
+      <div class="dot"></div>
+    </div>
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye2"></div>
+    </div>
+    <div class="nose"></div>
+    <div class="goatee"></div>
+    <div class="goatee2"></div>
+    <div class="ccc"></div>
+  </div>
+</body>
+</html>
