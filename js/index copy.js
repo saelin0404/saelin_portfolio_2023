@@ -6,6 +6,7 @@ window.addEventListener("load",()=>{
   const header = document.querySelector(".header")
   const maintext = document.querySelector(".maintext")
   const h1 = document.querySelectorAll(".main_page h1 span")
+  
   portfolio.classList.add("intro")
   maintext.classList.add("on")
   h1[1].classList.add("on")
